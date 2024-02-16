@@ -1,24 +1,55 @@
 <!DOCTYPE html>
 <head>
   <title>Dagio</title>
-  <img src="Imagenes/Logo_sin_fondo.png" alt="Logo" style="float:left;width:200px;height:200px;">
+  <img src="../Imagenes/Logo_sin_fondo.png" alt="Logo" style="float:left;width:200px;height:200px;">
   <table>
     <tr>
-      <td><a href="index.html">Historia</a></td>
-      <td><a href="index.html">Horarios</a></td>
-      <td><a href="index.html">Menús</a></td>
-      <td><a href="index.html">Bodega</a></td>
-      <td><a href="index.html">Promociones</a></td>
-      <td><a href="index.html">Reservas</a></td>
-      <td><a href="index.html">Reseñas</a></td>
-      <td><a href="index.html">Contacto</a></td>
+      <td><a href="historia.html">Historia</a></td>
+      <td><a href="horarios.html">Horarios</a></td>
+      <td><a href="Menus/menus.html">Menús</a></td>
+      <td><a href="Bodega/bodega.html">Bodega</a></td>
+      <td><a href="promociones.html">Promociones</a></td>
+      <td><p>Reservas</p></td>
+      <td><a href="resenas.html">Reseñas</a></td>
+      <td><a href="contacto.html">Contacto</a></td>
     </tr>
   </table>
+  <!-- añadir 10 saltos de linea -->
+  <br><br><br><br><br><br><br><br><br><br>
+  
 
 </head>
 <body>
-  <h1>¡Hola Mundo!</h1>
-  <p>Este es un proyecto de prueba para el curso de Desarrollo de Aplicaciones Web.</p>
-  
+  <h1>RESERVAS</h1>
+  <form>
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha" required>
+    <br>
+    <label for="hora">Hora:</label>
+    <input type="time" id="hora" name="hora" required>
+    <br>
+    <label for="personas">Personas:</label>
+    <input type="number" id="personas" name="personas" required>
+    <br>
+    <br>
+    <input type="submit" value="RESERVAR">
+  </form>
+  <br><br>
 </body>
+
+
+<footer>
+  <p>Carrer Bisbe Torres Mayans, 14, 07800 Eivissa, Illes Balears<br>
+    (+34) 971 31 74 47<br>
+    dagio@gmail.com<br>
+  </p>
+  <p>
+    <a href="https://www.facebook.com/"><img src="../Imagenes/Facebook_Icon.png" alt="Facebook" style="width:50px;height:50px;"></a>
+    <a href="https://www.instagram.com/"><img src="../Imagenes/Instagram_Icon.jpg" alt="Instagram" style="width:50px;height:50px;"></a>
+    <a href="https://www.twitter.com/"><img src="../Imagenes/Twitter_Icon.jpg" alt="Twitter" style="width:50px;height:50px;"></a>
+  </p>
+  <p><a href="../Documentos/PoliticasDagio.pdf">Políticas de privacidad</a></p>
+  <p>© 2021 Dagio. Todos los derechos reservados.</p>
+
+</footer>
 </html>
