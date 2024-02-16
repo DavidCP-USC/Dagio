@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+table {
+    /*Alinear tabla a la derecha*/
+    margin-left: auto;
+    width: 75%; /* Ancho total de la tabla */
+    border-collapse: collapse; /* Fusiona los bordes de las celdas adyacentes */
+    margin-top: 70px; /* Margen superior de la tabla */
+    margin-bottom: 20px; /* Margen inferior de la tabla */
+    
+  }
+  #logo{ /*aumentar tamaño del logo*/
+    width: 400px;
+    height: 400px;
+    /*Desplaza a la izquierda*/
+
+    /*Desplaza mas a la izquierda*/
+    margin-left: -90px;
+    margin-top: -90px;
+    /*hacerlo flotante*/
+    float: left;
+    
+
+  }
+  
+  th, td {
+    text-align: center; /* Alinea el contenido de las celdas al centro */
+    padding: 10px; /* Agrega espacio entre el borde y el contenido */
+    border: 4px solid #402F2B; /* Borde gris de 1px para las celdas */
+    font-size: 18px; /* Tamaño del texto */
+    font-family: 'Noto serif', sans-serif; /* Tipo de letra del texto */
+  }
+
+  a {
+    color: #ffffff; /* Color del texto de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-weight: bold; /* Pone el texto en negrita */
+  }
+  
+  a:hover {
+    color: #ffffff; /* Cambia el color del texto al pasar el mouse */
+    text-decoration: underline; /* Agrega un subrayado al pasar el mouse */
+  }
+
+  tr {
+    background-color: #A6705Dff; /* Color de fondo de la fila */
+  }
+footer{
+    
+    background-color: #402f2bff;
+    color: #ffd7c6ff;
+    font-family: 'Noto serif', sans-serif;
+
+}
+footer a{
+    color: #ffd7c6ff;
+    width: fit-content;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#ImgPpal{
+    /*Poner imagen en el centro horizontalmente*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+/*Añadir margenes a la pagina*/
+body, header{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2e5d5ff;
+    margin: 3% 3%;
+}
+
+footer p {
+    text-align: center;
+}
+#textoContacto{
+    text-align: left;
+    font-family: 'Noto Serif', sans-serif;
+
+}
+#politicas{
+    /*Poner el texto arriba a la derecha*/
+    text-align: right;
+    font-family: 'Noto Serif', sans-serif;
+
+}
+#copyright{
+    text-align: right;
+    font-family: 'Noto Serif', sans-serif;
+}
+footer p img {
+    display: inline-block;
+    margin: 0 5px;
+}
+  
+p{
+    font-family: 'Noto Serif', sans-serif;
+    text-align: justify;
+}
+
+
