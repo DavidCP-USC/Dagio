@@ -21,6 +21,12 @@ table {
     
 
   }
+  .indiceActual{
+    color: #ffffff; /* Color del texto de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-family: 'Noto Serif', sans-serif;
+    text-align: center;
+  }
   
   th, td {
     text-align: center; /* Alinea el contenido de las celdas al centro */
