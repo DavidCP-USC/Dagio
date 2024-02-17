@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+h1{
+    color: #A6705Dff;
+    font-size: 60px;
+    text-align: center;
+    font-family: 'Bebas Neue', 'Noto serif', sans-serif;
+    font-weight: bold;
+}
+h2, h3{
+    color: #A6705Dff;
+    font-size: 30px;
+    font-family: 'Noto serif', sans-serif;
+}
+p1, p2{
+    color: black;
+    font-size: 25px;
+    font-family: 'Noto serif', sans-serif;
+}
+li{
+    color: black;
+    font-size: 25px;
+    font-family: 'Noto serif', sans-serif;
+}
