@@ -108,4 +108,14 @@ p{
     text-align: justify;
 }
 
+.redondeada{
+  border-radius: 20px;
+  transition: transform 0.5s ease-in-out;
+}
 
+.redes{
+  transition: transform 0.5s ease-in-out;
+}
+.redes:hover {
+  transform: translateY(-10px);
+}

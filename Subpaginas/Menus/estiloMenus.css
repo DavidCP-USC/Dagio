@@ -20,3 +20,7 @@ body {
     text-align: center;
     font-family: 'Noto serif', sans-serif;
 }
+
+.redondeada:hover {
+    transform: translateY(-10px);
+  }
