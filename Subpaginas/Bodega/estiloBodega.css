@@ -9,14 +9,14 @@ h1{
     font-weight: bold;
 }
 
+h3{
+    color: #A6705Dff;
+    font-size: 30px;
+    text-align: left;
+    font-family: 'Noto serif', sans-serif;
+}
+
 body {
     text-align: center;
     font-family: 'Noto serif', sans-serif;
 }
-
-p1, p2, p3{
-    color: black;
-    font-size: 25px;
-    font-family: 'Noto serif', sans-serif;
-}
-

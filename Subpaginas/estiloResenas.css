@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
 h1{
     color: #A6705Dff;
     font-size: 60px;
@@ -9,14 +8,20 @@ h1{
     font-weight: bold;
 }
 
+h2{
+    color: #A6705Dff;
+    font-size: 30px;
+    text-align: left;
+    font-family: 'Noto serif', sans-serif;
+}
+
+h3{
+
+    text-align: left;
+    
+}
+
 body {
     text-align: center;
     font-family: 'Noto serif', sans-serif;
 }
-
-p1, p2, p3{
-    color: black;
-    font-size: 25px;
-    font-family: 'Noto serif', sans-serif;
-}
-

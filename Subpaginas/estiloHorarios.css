@@ -9,14 +9,13 @@ h1{
     font-weight: bold;
 }
 
-body {
-    text-align: center;
-    font-family: 'Noto serif', sans-serif;
-}
-
 p1, p2, p3{
     color: black;
     font-size: 25px;
+    text-align: left;
     font-family: 'Noto serif', sans-serif;
 }
+
+
+
 
