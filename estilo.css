@@ -10,7 +10,6 @@
   background-color: #A6705Dff;
   top: 0;
   z-index: 10;  
-  
 }
 
 .body{
@@ -19,6 +18,7 @@
   grid-template-rows: 500px 400px 400px 20px;
   gap: 30px;
   grid-row-gap: 60px;
+  
 }
 
 .footer{
@@ -55,7 +55,7 @@ body{
 .logoDiv{
   grid-column: 1;
   grid-row: 1;
-  position: relative;
+  
 }
 
 #logo{

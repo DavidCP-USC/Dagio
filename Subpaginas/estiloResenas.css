@@ -25,3 +25,106 @@ body {
     text-align: center;
     font-family: 'Noto serif', sans-serif;
 }
+
+label {
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+#estrella1:checked, #estrella2:checked, #estrella3:checked, #estrella4:checked, #estrella5:checked {
+    border: 16px solid rgb(255, 255, 0);
+}
+
+#estrella1, #estrella2, #estrella3, #estrella4, #estrella5 {
+    appearance: none;
+
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+
+  border: 16px solid #ffffff;
+  margin-right: 5px;
+
+  
+    clip-path: polygon(50% 0%, 67% 33%, 100% 33%, 75% 60%, 83% 90%, 50% 67%, 17% 90%, 25% 60%, 0% 33%, 33% 33%);
+    
+    position: relative;
+    left: 10px;
+}
+
+
+#nombre {
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 700px;
+    height: 30px;
+}
+#text{
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 700px;
+    height: 100px;
+}
+
+
+button,.nivel {
+    padding: 10px 50px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+button:hover, .nivel:hover {
+    background-color: #45a049;
+}
+
+.body{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 3fr 1fr; 
+    grid-template-rows: 100px 600px;
+    gap: 30px;
+    grid-row-gap: 20px;
+}
+
+.titulo{
+    grid-column: 3;
+    grid-row: 1;
+}
+
+form{
+    grid-column: 2/5;
+    grid-row: 2;
+    background: #ccc;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding: 20px;
+    border: 1px solid black;
+    
+}
+
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  list-style-type: none;
+  
+}
+
+
+
+
+
+

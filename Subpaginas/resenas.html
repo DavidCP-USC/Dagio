@@ -1,53 +1,60 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!DOCTYPE html>
 <head>
-  <title>Dagio</title>
-  <link rel="stylesheet" href="../estilo.css">
-  <link rel="stylesheet" href="estiloResenas.css">
-  <img id ="logo" src="../Imagenes/Logo_sin_fondo.png" alt="Logo">
-  <table>
-    <tr>
-      <td><a href="historia.html">Historia</a></td>
-      <td><a href="horarios.html">Horarios</a></td>
-      <td><a href="Menus/menus.html">Menús</a></td>
-      <td><a href="Bodega/bodega.html">Bodega</a></td>
-      <td><a href="promociones.html">Promociones</a></td>
-      <td><a href="reservas.html">Reservas</td>
-      <td><p class="indiceActual">Reseñas</p></td>
-      <td><a href="contacto.html">Contacto</a></td>
-    </tr>
-  </table>
-  <!-- añadir 10 saltos de linea -->
-  <br><br><br><br><br><br><br><br><br><br>
-  
-
+  <div class="cabecera">
+    <title>Dagio</title>
+    <link rel="stylesheet" href="../estilo.css">
+    <link rel="stylesheet" href="estiloResenas.css">
+    <div class="logoDiv">
+      <a href="../index.html"><img id ="logo" src="../Imagenes/Logo_sin_fondo.png" alt="Logo"></a>
+    </div>
+    <table>
+      <tr>
+        <td><a href="historia.html">Historia</a></td>
+        <td><a href="horarios.html">Horarios</a></td>
+        <td><a href="Menus/menus.html">Menús</a></td>
+        <td><a href="Bodega/bodega.html">Bodega</a></td>
+        <td><a href="promociones.html">Promociones</a></td>
+        <td><a href="reservas.html">Reservas</td>
+        <td><p class="indiceActual">Reseñas</p></td>
+        <td><a href="contacto.html">Contacto</a></td>
+      </tr>
+    </table>
+  </div>
 </head>
 <body>
-  <h1>RESEÑAS</h1>
-  <form>
-    <label for="Nombre">Nombre:</label>
-	
-    <textarea id="nombre" name="nombre" required></textarea>
-	<input type="radio" id="estrella1" name="valoracion" value="1">
-	<label for="estrella1">★</label>
-  <input type="radio" id="estrella2" name="valoracion" value="2">
-  <label for="estrella2">★</label>
-  <input type="radio" id="estrella3" name="valoracion" value="3">
-  <label for="estrella3">★</label>
-  <input type="radio" id="estrella4" name="valoracion" value="4">
-  <label for="estrella4">★</label>
-  <input type="radio" id="estrella5" name="valoracion" value="5">
-  <label for="estrella5">★</label>
-    <br>
-    <label for="texto">Texto:</label>
-    <textarea id="text" name="texto" required></textarea>
-    <br>
-    <br>
-	<input type="file" id="imagenes" name="imagenes[]" multiple>
-    <button type="submit">Publicar</button>
-  </form>
-  <br><br>
- <h2>Reseñas Publicadas</h2>
+  <div class="body1">
+    <div class="titulo">
+      <h1>RESEÑAS</h1>
+    </div>
+    <form>
+      <div>
+        <label for="Nombre">Nombre:</label>
+        <textarea id="nombre" name="nombre" required></textarea>
+        <input type="radio" id="estrella1" name="valoracion" value="1">
+        <label for="estrella1"></label>
+        <input type="radio" id="estrella2" name="valoracion" value="2">
+        <label for="estrella2"></label>
+        <input type="radio" id="estrella3" name="valoracion" value="3">
+        <label for="estrella3"></label>
+        <input type="radio" id="estrella4" name="valoracion" value="4">
+        <label for="estrella4"></label>
+        <input type="radio" id="estrella5" name="valoracion" value="5">
+        <label for="estrella5"></label>
+      </div>
+      <div>
+        <label for="texto">Texto:</label>
+        <textarea id="text" name="texto" required></textarea>
+      </div>
+      <div>
+        <label for="imagenes" class="nivel">Elegir_Imagen</label>
+        <input type="file" id="imagenes" name="imagenes" accept="image/*" multiple/>
+        <button type="submit">Publicar</button>
+      </div>  
+      
+    </form>
+  </div>
+ <h2>Reseñas Publicadas</h2>  
 
           <article>
             <h3>Nombre</h3>
@@ -61,17 +68,27 @@
 
 
 <footer>
-  <p id="textoContacto">Carrer Bisbe Torres Mayans, 14, 07800 Eivissa, Illes Balears<br><br>
-    (+34) 971 31 74 47<br><br>
-    dagio@gmail.com<br>
-  </p>
-  <p>
-    <a href="https://www.facebook.com/"><img class="redes" src="../Imagenes/Facebook_Icon.png" alt="Facebook" style="width:50px;height:50px;"></a>
-    <a href="https://www.instagram.com/"><img class="redes" src="../Imagenes/Instagram_Icon.png" alt="Instagram" style="width:50px;height:50px;"></a>
-    <a href="https://www.twitter.com/"><img class="redes" src="../Imagenes/Twitter_Icon.png" alt="Twitter" style="width:50px;height:50px;"></a>
-  </p>
-  <p id="politicas"><a href="../Documentos/PoliticasDagio.pdf">Políticas de privacidad</a></p>
-  <p id="copyright">© 2021 Dagio. Todos los derechos reservados.</p>
-
+  <div class="footer">
+    <div class="contacto">
+      <p>
+        Carrer Bisbe Torres Mayans, 14, 07800 Eivissa, Illes Balears<br><br>
+        (+34) 971 31 74 47<br>
+        <br>
+        dagio@gmail.com
+      <br>
+      </p>
+    </div>
+    <div class="redSocial">
+      <p>
+        <a href="https://www.facebook.com/"><img class="redes" src="../Imagenes/Facebook_Icon.png" alt="Facebook" style="width:50px;height:50px;"></a>
+        <a href="https://www.instagram.com/"><img class="redes"src="../Imagenes/Instagram_Icon.png" alt="Instagram" style="width:50px;height:50px;"></a>
+        <a href="https://www.twitter.com/"><img class="redes" src="../Imagenes/Twitter_Icon.png" alt="Twitter" style="width:50px;height:50px;"></a>
+      </p>
+    </div>
+    <div class="politicas">
+      <p><a href="../Documentos/PoliticasDagio.pdf">Políticas de privacidad</a></p>
+      <p>© 2021 Dagio. Todos los derechos reservados.</p>
+    </div>
+  </div>
 </footer>
 </html>
