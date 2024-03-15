@@ -1,7 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-h1{
+nav {
+    width: 100%;
+    background-color: #a6705dff;
+}
+  
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+}
+nav ul li {
+    float: left;
+}
+  
+nav ul li a{
+    display: block;
+    color: white;
+    font-size: 20px;
+    font-family: 'Noto serif', sans-serif;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+nav ul li a:hover {
+    background-color: #402f2b;
+    text-decoration: underline;
+}
+
+.activo{
+    background-color: #402f2b;
+}
+
+
+  
+@media screen and (max-width: 600px) {
+    nav ul li {
+        float: none;
+    }
+}
+
+h1 {
     color: #A6705Dff;
     font-size: 60px;
     text-align: center;
@@ -9,7 +50,7 @@ h1{
     font-weight: bold;
 }
 
-h3{
+h3 {
     color: #A6705Dff;
     font-size: 30px;
     text-align: left;
@@ -25,26 +66,25 @@ body {
     transform: translateY(-10px);
 }
 
-.body{
+.body {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr 3fr 1fr; 
     grid-template-rows: 100px 600px;
     gap: 30px;
     grid-row-gap: 20px;
- }
+}
 
-.titulo{
+.titulo {
     grid-column: 3;
     grid-row: 1;
 }
 
-.carta{
+.carta {
     grid-column: 2;
     grid-row: 2;
 }
 
-.menu_degustacion{
+.menu_degustacion {
     grid-column: 4;
     grid-row: 2;
-
 }
