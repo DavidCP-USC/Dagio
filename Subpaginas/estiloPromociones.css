@@ -13,6 +13,19 @@ h2, h3{
     font-family: 'Noto serif', sans-serif;
 }
 
+@media screen and (min-width: 600px){
+    .ImagenPromocion1{
+        width: 50%;
+        float: right;
+    }
+    .promo1{
+        width: 40%;
+        float:left;
+        position: relative;
+        left: 30px;
+    }
+}
+
 .indiceActual{
     font-size: 18px;
     color: #ffffff; /* Color del texto de los enlaces */
@@ -21,34 +34,6 @@ h2, h3{
     text-align: center;
 }
 
-.ImagenPromocion1{
-    grid-column: 3;
-    grid-row: 1;
-}
-
-.body{
-    display: grid;
-    grid-template-columns: 1fr 3fr 3fr 1fr; 
-    grid-template-rows: 500px 400px 90px;
-    gap: 30px;
-    grid-row-gap: 60px;
-}
-  
-
-.ImagenPromocion2{
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.promocion1{
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.promocion2{
-    grid-column: 3;
-    grid-row: 2;
-}
 
 p1, p2{
     color: black;
@@ -61,3 +46,8 @@ li{
     font-family: 'Noto serif', sans-serif;
 }
 
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
