@@ -24,11 +24,13 @@ body{
 .logoDiv{
   grid-column: 1;
   grid-row: 1;
-  
 }
 
 #logo{
   height: 100px;
+  width: auto;
+  position: relative;
+  left: 50px;
 }
 
 table {
@@ -78,17 +80,14 @@ tr {
 .footer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ; 
-    grid-template-rows: 60px 60px 80px;  
+    grid-template-rows: 60px 60px auto; 
 }
 
 footer{
     background-color: #402f2bff;
     color: #ffd7c6ff;
     font-family: 'Noto serif', sans-serif;
-    position: relative;
-    bottom: 0;
-    border: 0px;
-    padding: 0px;
+
 }
 
 footer a{
