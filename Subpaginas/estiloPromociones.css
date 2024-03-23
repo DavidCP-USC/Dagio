@@ -7,13 +7,15 @@ h1{
     font-family: 'Bebas Neue', 'Noto serif', sans-serif;
     font-weight: bold;
 }
-h2, h3{
+h2{
     color: #A6705Dff;
     font-size: 30px;
     font-family: 'Noto serif', sans-serif;
 }
 
-@media screen and (min-width: 600px){
+
+
+@media screen and (min-width: 830px){
     .ImagenPromocion1{
         width: 50%;
         float: right;
@@ -34,16 +36,15 @@ h2, h3{
     text-align: center;
 }
 
-
-p1, p2{
+p1, li{
     color: black;
     font-size: 25px;
     font-family: 'Noto serif', sans-serif;
 }
-li{
-    color: black;
-    font-size: 25px;
-    font-family: 'Noto serif', sans-serif;
+
+img {
+    width: 100%;
+    height: auto;
 }
 
 .clearfix::after {
@@ -51,3 +52,4 @@ li{
     display: table;
     clear: both;
 }
+
