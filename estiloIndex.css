@@ -15,8 +15,6 @@
 
 
 
-
-
 @media screen and (min-width: 1200px ) {
     .body {
         grid-template-columns: 1fr 1fr;
@@ -29,18 +27,11 @@
         max-width: 1450px
     }
     .ImagenPrincipal {
-        transform: scale(1.3);
         grid-area: ImagenPrincipal;
         display: flex;
         justify-content: center;
         padding: 1rem;
         margin: 0 auto;
-    }
-    .ImgPpal2{
-        transform: scale(1.5);
-    }
-    .ImgCocina{
-        transform: scale(1.87);
     }
 }
 
@@ -51,7 +42,7 @@ img {
 
 
 .ImagenPrincipal {
-    scale: 0.8;
+    scale: 1;
     grid-area: ImagenPrincipal;
     padding: 1rem;
 }
@@ -62,14 +53,14 @@ img {
 }
 
 .ImgPpal2{
-    scale: 0.6;
+    scale: 1;
     grid-area: ImagenPrincipal2;
     padding: 1rem;
 }
 
   
 .ImgCocina{
-    scale: 0.6;
+    scale: 1;
     grid-area: ImagenCocina;
     padding: 1rem;
 }
