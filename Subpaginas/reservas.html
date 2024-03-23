@@ -31,16 +31,18 @@
       <form>
         <label for="fecha">Fecha:</label>
         <input type="date" id="fecha" name="fecha" required>
-        <br>
         <label for="hora">Hora:</label>
         <input type="time" id="hora" name="hora" required>
-        <br>
         <label for="personas">Personas:</label>
         <input type="number" id="personas" name="personas" required>
-        <br>
-        <br>
+        <label for="personas">Teléfono:</label>
+        <input type="tel" id="telefono" pattern="[0-9]{5,15}" name="telefono" required>
         <input type="submit" value="RESERVAR" class="submit-button">
       </form>
+    </div>
+    <div class = "informacionSolicitud">
+      <p1>Esta solicitud de reserva será confirmada telefónicamente, la reserva no 
+        será confirmada hasta que reciba nuestra contestación. Muchas Gracias.</p1>
     </div>
   </div>
   <footer>

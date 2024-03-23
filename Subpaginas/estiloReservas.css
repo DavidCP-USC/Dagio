@@ -8,30 +8,33 @@ h1{
     font-weight: bold;
 }
 
-.body {
+.Formulario {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    height: 20%;
-    margin: 0;
     font-family: Arial, sans-serif;
 }
 
-.Formulario {
-    font-family: Arial, sans-serif;
-    background-color: red;
+form{
+    background-color: #A6705Dff;
+    padding: 30px;
+    border-radius: 20px;
 }
-  
-label {
+
+.Formulario label {
     width: 100px;
     text-align: right;
     margin-right: 10px;
     font-weight: bold;
+    color: white;
 }
   
 input[type="date"],
 input[type="time"],
-input[type="number"] {
+input[type="number"],
+input[type="tel"] {
+    display: flex;
+    flex-direction: row;
     padding: 5px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -39,8 +42,16 @@ input[type="number"] {
     font-size: 16px;
     width: 200px;
 }
+.informacionSolicitud{
+    font-family: 'Noto serif', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    width: auto;
+}
 
 .submit-button {
+    display: flex;
+    margin: 0 auto;
     padding: 10px 30px;
     background-color: #4CAF50;
     color: white;
@@ -50,12 +61,23 @@ input[type="number"] {
     font-size: 16px;
 }
 
-.body {
-    min-height: calc(100vh - 150px); /* Adjust the value as needed */
+p1, footer{
     display: flex;
-    align-items: center;
+    flex-direction: row;
+}
+
+p1{
     justify-content: center;
-  }
+}
+
+@media screen and (min-width: 501px){
+    footer{
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+    }
+}
+
 
 .submit-button:hover {
     background-color: #45a049;
