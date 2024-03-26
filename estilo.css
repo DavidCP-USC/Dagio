@@ -82,13 +82,13 @@ tr {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ; 
     grid-template-rows: 60px 60px auto; 
+    width: 100%;
 }
 
 footer{
     background-color: #402f2bff;
     color: #ffd7c6ff;
     font-family: 'Noto serif', sans-serif;
-
 }
 
 footer a{
