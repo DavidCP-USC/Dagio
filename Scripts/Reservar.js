@@ -3,7 +3,8 @@
 // Verificamos que los campos del formulario de reservas.html no estén vacios,
 // que la fecha y la hora sea mayor o igual a la fecha actual,
 // el numero de telefono sea de 9 digitos y que el numero de personas sea mayor a 0.
-document.getElementsByClassName("submit-button")[0].addEventListener("click", () => {
+document.querySelector("form").addEventListener("submit", (event) => {
+    event.preventDefault();
     // Obtener los campos del formulario de reservas.html
     const fecha = document.getElementById("fecha").value; // Obtén la fecha del formulario
     const hora = document.getElementById("hora").value; // Obtén la hora del formulario
@@ -13,6 +14,8 @@ document.getElementsByClassName("submit-button")[0].addEventListener("click", ()
     // Verificar que los campos no estén vacíos
     if (fecha.trim() === '' || hora.trim() === '' || telefono.trim() === '' || personas.trim() === '') {
         console.log('Por favor, completa todos los campos del formulario.');
+        document.getElementsByTagName("p1")[0].innerHTML = "Por favor, completa todos los campos del formulario.";
+        document.getElementsByTagName("p1")[0].style.color = "red";
         return;
     }
 
@@ -21,18 +24,24 @@ document.getElementsByClassName("submit-button")[0].addEventListener("click", ()
     const fechaSeleccionada = new Date(fecha + 'T' + hora);
     if (fechaSeleccionada < fechaActual) {
         console.log('La fecha y hora seleccionadas deben ser mayores o iguales a la fecha actual.');
+        document.getElementsByTagName("p1")[0].innerHTML = "La fecha y hora seleccionadas deben ser mayores o iguales a la fecha actual.";
+        document.getElementsByTagName("p1")[0].style.color = "red";
         return;
     }
 
     // Verificar que el número de teléfono tenga 9 dígitos
     if (telefono.length !== 9) {
         console.log('El número de teléfono debe tener 9 dígitos.');
+        document.getElementsByTagName("p1")[0].innerHTML = "El número de teléfono debe tener 9 dígitos.";
+        document.getElementsByTagName("p1")[0].style.color = "red";
         return;
     }
 
     // Verificar que el número de personas sea mayor a 0
     if (parseInt(personas) <= 0) {
         console.log('El número de personas debe ser mayor a 0.');
+        document.getElementsByTagName("p1")[0].innerHTML = "El número de personas debe ser mayor a 0.";
+        document.getElementsByTagName("p1")[0].style.color = "red";
         return;
     }
 
@@ -43,16 +52,21 @@ document.getElementsByClassName("submit-button")[0].addEventListener("click", ()
     // Domingos: Cerrado)
     const diaSemana = fechaSeleccionada.getDay();
     const horaSeleccionada = fechaSeleccionada.getHours();
-    const minutosSeleccionados = fechaSeleccionada.getMinutes();
+    console.log(horaSeleccionada);
+
     // Verificar si el día seleccionado es domingo
     if (diaSemana === 0) {
         console.log('El restaurante está cerrado los domingos.');
+        document.getElementsByTagName("p1")[0].innerHTML = "El restaurante está cerrado los domingos.";
+        document.getElementsByTagName("p1")[0].style.color = "red";
         return;
     }
     // Verificar si el día seleccionado es sábado
     else if (diaSemana === 6) {
         if (!((horaSeleccionada >= 12 && horaSeleccionada < 16) || (horaSeleccionada >= 20 && horaSeleccionada < 24))) {
-            console.log('El restaurante está cerrado los sábados por la noche.');
+            console.log('El restaurante está cerrado a esa hora.');
+            document.getElementsByTagName("p1")[0].innerHTML = "El restaurante está cerrado a esa hora.";
+            document.getElementsByTagName("p1")[0].style.color = "red";
             return;
         }
     }
@@ -61,6 +75,8 @@ document.getElementsByClassName("submit-button")[0].addEventListener("click", ()
     else if (diaSemana >= 1 && diaSemana <= 5) {
         if (!((horaSeleccionada >= 12 && horaSeleccionada < 16) || (horaSeleccionada >= 20 && horaSeleccionada < 24))) {
             console.log('El restaurante está cerrado los lunes a viernes por la noche.');
+            document.getElementsByTagName("p1")[0].innerHTML = "El restaurante está cerrado los lunes a viernes por la noche.";
+            document.getElementsByTagName("p1")[0].style.color = "red";
             return;
         }
     }
@@ -88,8 +104,11 @@ document.getElementsByClassName("submit-button")[0].addEventListener("click", ()
 
         if (horaOcupada) {
             console.log('La hora seleccionada está ocupada en la misma fecha.');
+            document.getElementsByTagName("p1")[0].innerHTML = "La hora seleccionada está ocupada en la misma fecha.";
         } else {
             console.log('La hora seleccionada está disponible en la misma fecha.');
+            document.getElementsByTagName("p1")[0].innerHTML = "Datos enviados correctamente, en breve le contactaremos";
+            document.getElementsByTagName("p1")[0].style.color = "green";
         }
     })
     .catch(error => {
