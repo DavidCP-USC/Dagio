@@ -4,27 +4,21 @@
 h1{
     color: #A6705Dff;
     font-size: 60px;
-    text-align: center;
     font-family: 'Bebas Neue', 'Noto serif', sans-serif;
     font-weight: bold;
 }
 
-body {
+
+p1, p2{
+    
+    color: black;
+    font-size: 20px;
     text-align: center;
     font-family: 'Noto serif', sans-serif;
 }
 
-p1, p2, p3{
-    color: black;
-    font-size: 25px;
-    font-family: 'Noto serif', sans-serif;
-}
-
-.redondeada:hover {
-    transform: translateY(-10px);
+@media screen and (min-width: 1000px) {
+    .texto {
+      font-size: 1.5rem; /* Increase font size for larger screens */
+    }
   }
-
-#copyright{
-    text-align: right;
-    font-family: 'Noto Serif', sans-serif;
-}
