@@ -27,9 +27,7 @@ body {
 }
 
 label {
-    width: 100px;
-    text-align: right;
-    margin-right: 10px;
+    width: 200px;
     font-weight: bold;
 }
 
@@ -39,19 +37,12 @@ label {
 
 #estrella1, #estrella2, #estrella3, #estrella4, #estrella5 {
     appearance: none;
-
-  border-radius: 50%;
-  width: 5px;
-  height: 5px;
-
   border: 16px solid #ffffff;
-  margin-right: 5px;
-
   
     clip-path: polygon(50% 0%, 67% 33%, 100% 33%, 75% 60%, 83% 90%, 50% 67%, 17% 90%, 25% 60%, 0% 33%, 33% 33%);
     
     position: relative;
-    left: 10px;
+    left: 15px;
 }
 
 
@@ -62,7 +53,7 @@ label {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    width: 1000px;
+    width: 700px;
     height: 30px;
 }
 #text{
@@ -95,24 +86,25 @@ button:hover, .nivel:hover {
 .body{
     display: grid;
     grid-template-columns: 1fr 3fr 1fr 3fr 1fr; 
-    grid-template-rows: 100px 600px;
-    gap: 30px;
-    grid-row-gap: 20px;
+    grid-template-rows: 25px 100px 300px 25px;
+    
+    
 }
 
 .titulo{
     grid-column: 3;
-    grid-row: 1;
+    grid-row: 2;
 }
 
 form{
     grid-column: 2/5;
-    grid-row: 2;
+    grid-row: 3;
+    max-width: 500px;
+    margin: 0 auto;
     background: #ccc;
-    margin-left: 500px;
-    margin-right: 500px;
-    padding: 20px;
-    border: 1px solid black;
+    background-color: #A6705Dff;
+    padding: 30px;
+    border-radius: 20px;
     
 }
 
@@ -122,11 +114,40 @@ form div {
   justify-content: space-between;
   margin-bottom: 10px;
   list-style-type: none;
+  color: white;
   
 }
 
 
+@media screen and (max-width: 580px){
+    form{
+        max-width: 325px;
+        
+    }
 
+    button,.nivel {
+        padding: 10px 40px;
+        font-size: 10px;
+
+    }
+
+    label {
+        width: 75px;
+        
+    }
+
+    #nombre {
+        font-size: 10px;
+        width: 100%;
+        
+    }
+    #text{
+        
+        font-size: 10px;
+        width: 100%;
+    }
+
+}
 
 
 
