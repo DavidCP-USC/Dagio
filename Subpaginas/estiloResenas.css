@@ -8,6 +8,34 @@ h1{
     font-weight: bold;
 }
 
+h2{
+    color: #A6705Dff;
+    font-size: 40px;
+    text-align: left;
+    font-family: 'Bebas Neue', 'Noto serif', sans-serif;
+}
+
+h3{
+    color: black;
+    font-size: 30px;
+    font-family: 'Noto serif', sans-serif;
+}
+
+.resena{
+    width: auto;
+    height: auto;
+    border: 10px solid; /* Borde sólido de 2 píxeles */
+    border-radius: 5px;
+    border-color: #A6705Dff;
+    margin-bottom: 70px;
+}
+
+.textoResenas{
+    color: black;
+    font-size: 25px;
+    font-family: 'Noto serif', sans-serif;
+    
+}
 
 label {
     width: 200px;
@@ -67,7 +95,7 @@ button:hover, .nivel:hover {
 .body{
     display: grid;
     grid-template-columns: 1fr 3fr 1fr 3fr 1fr; 
-    grid-template-rows: 25px 100px 300px 25px;
+    grid-auto-rows: minmax(50px, auto);
     
     
 }
@@ -99,6 +127,13 @@ form div {
   
 }
 
+#contenidoXML{
+    grid-column: 1/3;
+    grid-row: 4;
+    margin: 0 auto;
+    padding: 30px;
+}
+
 
 @media screen and (max-width: 580px){
     form{
@@ -128,6 +163,13 @@ form div {
         width: 100%;
     }
 
+    .textoResenas{
+        
+        font-size: 18px;
+        
+    }
+
+   
 }
 
 

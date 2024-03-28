@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resenas> 
+    <publicacion>
+        <valoracion>5 estrellas</valoracion>
+        <nombre>Sergio</nombre>
+        <text>Me gusta bastante</text>
+    </publicacion>
+    <publicacion>
+        <valoracion>4 estrellas</valoracion>
+        <nombre>David</nombre>
+        <text>Me gusta, pero podía ser mejor</text>
+    </publicacion>
+</resenas>
