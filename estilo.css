@@ -64,55 +64,56 @@ footer p img {
 
 
 .redondeada{
-  border-radius: 20px;
-  transition: transform 0.5s ease-in-out;
+    border-radius: 20px;
+    transition: transform 0.5s ease-in-out;
 }
 
 .redes{
-  transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
 }
 .redes:hover {
-  transform: translateY(-10px);
+    transform: translateY(-10px);
 }
 
 .contacto{
-  grid-column: 1;
-  grid-row: 2;
-  position: relative;
-  bottom: 30px;
-  font-family: 'Noto Serif', sans-serif;
-
+    grid-column: 1;
+    grid-row: 2;
+    position: relative;
+    bottom: 30px;
+    font-family: 'Noto Serif', sans-serif;
 }
 
 .redSocial{
-  grid-column: 2;
-  grid-row: 2;
+    grid-column: 2;
+    grid-row: 2;
 }
 
 .politicas{
-  grid-column: 3;
-  grid-row: 3;
-  font-family: 'Noto Serif', sans-serif;
+    grid-column: 3;
+    grid-row: 3;
+    font-family: 'Noto Serif', sans-serif;
 }
 
+
 .custom-container {
-  background-color: #A6705Dff; /* Cambia el color de fondo del container según tu preferencia */
+    background-color: #A6705Dff; /* Cambia el color de fondo del container según tu preferencia */
 }
 .custom-navbar {
-  background-color: #A6705Dff; /* Cambia el color de fondo según tu preferencia */
+    background-color: #A6705Dff; /* Cambia el color de fondo según tu preferencia */
+    padding: 0px;
+    height: auto;
 }
 
 .custom-toggler,.custom-toggler:focus {
-      background-color: #ffd7c6ff; /* Cambia el color de fondo del toggler */
-    }
+    background-color: #ffd7c6ff; /* Cambia el color de fondo del toggler */
+}
 
 .custom-item {
-
- color: white;
- font-size: 18px; /* Ajusta el tamaño de la letra */
-  font-weight: bold; /* Pone el texto en negrita */
+    color: white;
+    font-size: 18px; /* Ajusta el tamaño de la letra */
+    font-weight: bold; /* Pone el texto en negrita */
 }
 .custom-item:hover{
-  color: white;
-  font-style: italic;
+    color: white;
+    font-style: italic;
 }
