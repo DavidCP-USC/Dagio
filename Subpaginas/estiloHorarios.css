@@ -12,9 +12,25 @@ h1{
 p1, p2, p3, p4{
     color: black;
     font-size: 25px;
-    text-align: left;
+    text-align: center;
     font-family: 'Noto serif', sans-serif;
-    margin-left: 300px;
+}
+
+.body{
+    text-align: center;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 0; /* Ajusta el padding según sea necesario */
 }
 
 

@@ -26,6 +26,12 @@ h2{
         position: relative;
         left: 30px;
     }
+    footer{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        padding: 0; /* Ajusta el padding según sea necesario */
+    }
 }
 
 .indiceActual{
@@ -52,4 +58,7 @@ img {
     display: table;
     clear: both;
 }
+
+
+
 
