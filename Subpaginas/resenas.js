@@ -1,45 +1,25 @@
 $(document).ready(function() {
   
-    $("#estrella5").change(function() {
-      if ($(this).is(":checked")) {
-        $("input[type='radio']").prop('checked', false).css('border-color', 'yellow');
-      }
-      
-    });
+    function actualizarEstrellas(estrellaSeleccionada) {
+  // Desactivar todas las estrellas y restablecer el color del borde
+  $("input[type='radio']").prop('checked', false).css('border-color', '');
   
-    $("#estrella4").change(function() {
-      if ($(this).is(":checked")) {
-        $("input[type='radio']").prop('checked', false).css('border-color', ''); // Desactiva todos los radio buttons y restablece el color del borde
-        $("#estrella1, #estrella2, #estrella3, #estrella4").prop('checked', true).css('border-color', 'yellow'); // Activa los radio buttons estrella1 a estrella4 y cambia su color de borde a amarillo
-      }
-    });
+  // Activar las estrellas hasta la seleccionada y cambiar su color de borde a amarillo
+  for (var i = 1; i <= estrellaSeleccionada; i++) {
+    $("#estrella" + i).prop('checked', true).css('border-color', 'yellow');
+  }
+}
 
-    $("#estrella3").change(function() {
-        if ($(this).is(":checked")) {
-          $("input[type='radio']").prop('checked', false).css('border-color', ''); // Desactiva todos los radio buttons y restablece el color del borde
-          $("#estrella1, #estrella2, #estrella3").prop('checked', true).css('border-color', 'yellow'); // Activa los radio buttons estrella1 a estrella4 y cambia su color de borde a amarillo
-        }
-    });
-
-    $("#estrella2").change(function() {
-        if ($(this).is(":checked")) {
-          $("input[type='radio']").prop('checked', false).css('border-color', ''); // Desactiva todos los radio buttons y restablece el color del borde
-          $("#estrella1, #estrella2").prop('checked', true).css('border-color', 'yellow'); // Activa los radio buttons estrella1 a estrella4 y cambia su color de borde a amarillo
-        }
-    });
-
-    $("#estrella1").change(function() {
-        if ($(this).is(":checked")) {
-          $("input[type='radio']").prop('checked', false).css('border-color', ''); // Desactiva todos los radio buttons y restablece el color del borde
-          $("#estrella1").prop('checked', true).css('border-color', 'yellow'); // Activa los radio buttons estrella1 a estrella4 y cambia su color de borde a amarillo
-        }
-    });
+$("#estrella5, #estrella4, #estrella3, #estrella2, #estrella1").change(function() {
+  var estrellaSeleccionada = parseInt($(this).val());
+  actualizarEstrellas(estrellaSeleccionada);
+});
     
-
+    var contadorDivs = 0;
     // Función para publicar una reseña
     $("#formularioResena").submit(function(event) {
       event.preventDefault(); // Evitar que se envíe el formulario de forma predeterminada
-
+      contadorDivs++;
       var contenidoPublicaciones = $("#contenidoXML");
       // Comprobar si el div tiene hijos al cargar la página
       if ($('#contenidoXML').children().length == 0) {
@@ -86,13 +66,39 @@ $(document).ready(function() {
 
       }
       contenidoPublicaciones.append(divPublicacion);
+      if (contadorDivs > 5) {
+        divPublicacion.hide();
+        }
       $("#preview").empty().text("Imagenes subidas!");
     // Limpiar el formulario
     $("#formularioResena")[0].reset();
-  }
-  else if(imagenes.length >5){
-    $("#preview").empty().text("Demasiadas imagenes. Solo 5.");
-  }
+        }
+        else if(imagenes.length >5){
+            $("#preview").empty().text("Demasiadas imagenes. Solo 5.");
+        }
+        else{
+            contenidoPublicaciones.append(divPublicacion);
+            if (contadorDivs > 3) {
+                divPublicacion.hide();
+            }
+            // Limpiar el formulario
+            $("#formularioResena")[0].reset();
+        }
+    // Agregar botón para mostrar más reseñas si hay más de 5 reseñas
+    if (contadorDivs > 5 && $(".mostrar-mas").length === 0) {
+        var botonMostrarMas = $("<button>").text("Mostrar más reseñas").addClass("mostrar-mas");
+
+        // Manejar clic en el botón para mostrar más reseñas ocultas
+        botonMostrarMas.click(function() {
+            $(".resena:hidden").show();
+            $(this).remove(); // Eliminar el botón una vez que se han mostrado todas las reseñas ocultas
+        });
+
+        // Agregar el botón al final de las reseñas
+        contenidoPublicaciones.append(botonMostrarMas);
+
+        
+        }
   
   
   });

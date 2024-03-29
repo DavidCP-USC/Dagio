@@ -212,8 +212,11 @@ form ol {
     display: none;
   }
 
-
-
+  .mostrar-mas{
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
 
 @media screen and (max-width: 580px){
     form{
