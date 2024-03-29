@@ -225,13 +225,18 @@ form ol {
     }
 
     button,.nivel {
-        padding: 10px 40px;
+        width: 120px;
+        padding: 10px 35px;
         font-size: 10px;
 
     }
 
     label {
         width: 75px;
+        
+    }
+
+    .nivel{
         
     }
 
