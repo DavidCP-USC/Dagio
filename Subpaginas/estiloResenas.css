@@ -176,6 +176,8 @@ form ol {
   .preview-image img, .centrar {
     width: 50px;
     height: 50px;
+    margin-left: 10px;
+    margin-bottom: 10px;
     object-fit: cover;
   }
   .remove-image {
