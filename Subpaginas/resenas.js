@@ -68,14 +68,26 @@ $(document).ready(function() {
 
     // Publicar las imágenes junto con la reseña
     if (imagenes.length > 0) {
-        for (var i = 0; i < imagenes.length; i++) {
-          var imagen = $("<img>").attr("src", imagenes[i]).addClass("centrar");
-          divPublicacion.append(imagen);
-        }
+      for (var i = 0; i < imagenes.length; i++) {
 
+        var imagen = $("<img>").attr("src", imagenes[i]).addClass("centrar");
+        var imagen2 = $("<img>").attr("src", imagenes[i]).addClass("imagenOculta");
+        imagen2.addClass("centrado");
+        divPublicacion.append(imagen);
+        divPublicacion.append(imagen2);
+        // Añadir click
+        imagen.mouseover(function() {
+            $(this).next().removeClass("imagenOculta");
+        });
+        imagen.mouseout(function() {
+            $(this).next().addClass("imagenOculta");
+        });
+        
+
+      }
     }
 
-      $("#preview").empty().text("Imagenes subidas!");
+    $("#preview").empty().text("Imagenes subidas!");
       // Limpiar el formulario
       $("#formularioResena")[0].reset();
       });

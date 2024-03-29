@@ -58,16 +58,13 @@
       
       <div>
         <label class="nivel" for="fileInput">IMAGENES</label>
-        <input type="file" id="fileInput" accept="image/*" multiple onchange="previewImage(event)">
+        <input class="botonImagenes" type="file" id="fileInput" accept="image/*" multiple onchange="previewImage(event)">
         <button type="submit">PUBLICAR</button>
       </div>  
       <div id="preview">
-        
       </div>
     </form>
-    <div id="ampliarImagen" style="display: none;">
-      <img id="imagenAmpliada" src="" alt="Imagen Ampliada">
-    </div>
+    
   </div>
   <script>
     function previewImage(event) {

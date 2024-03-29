@@ -30,6 +30,10 @@ h3{
     margin-bottom: 70px;
 }
 
+.botonImagenes{
+    display: none;
+}
+
 .textoResenas{
     color: black;
     font-size: 25px;
@@ -48,7 +52,7 @@ label {
 
 #estrella1, #estrella2, #estrella3, #estrella4, #estrella5 {
     appearance: none;
-  border: 16px solid #ffffff;
+    border: 16px solid #ffffff;
   
     clip-path: polygon(50% 0%, 67% 33%, 100% 33%, 75% 60%, 83% 90%, 50% 67%, 17% 90%, 25% 60%, 0% 33%, 33% 33%);
     
@@ -59,7 +63,6 @@ label {
 
 #nombre {
     resize: none;
-    
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
@@ -68,7 +71,6 @@ label {
 }
 #text{
     resize: none;
-    
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
@@ -194,15 +196,21 @@ form ol {
     align-items: center;
   }
 
-  .centrar:hover  {
-    width: 500px;
-    height: 500px;
-    position :fixed;
-    top: 50%;
-    left: 50%;
+  .centrado  {
+    max-width: 500px;
+    max-height: 500px;
+    position: fixed;
     transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;    
     z-index: 9999;
   }
+
+  .imagenOculta{
+    display: none;
+  }
+
+
 
 
 @media screen and (max-width: 580px){
