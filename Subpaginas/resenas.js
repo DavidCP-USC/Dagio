@@ -9,7 +9,7 @@ $(document).ready(function() {
     $("#estrella4").change(function() {
       if ($(this).is(":checked")) {
         $("input[type='radio']").prop('checked', false).css('border-color', ''); // Desactiva todos los radio buttons y restablece el color del borde
-        $("#estrella4").prop('checked', true).css('border-color', 'yellow'); // Activa los radio buttons estrella1 a estrella4 y cambia su color de borde a amarillo
+        $("#estrella1, #estrella2, #estrella3, #estrella4").prop('checked', true).css('border-color', 'yellow'); // Activa los radio buttons estrella1 a estrella4 y cambia su color de borde a amarillo
       }
     });
 
@@ -35,24 +35,30 @@ $(document).ready(function() {
     });
 
     // Función para publicar una reseña
-    $("#formularioReseña").submit(function(event) {
-        event.preventDefault(); // Evitar que se envíe el formulario de forma predeterminada
+    $("#formularioResena").submit(function(event) {
+      event.preventDefault(); // Evitar que se envíe el formulario de forma predeterminada
 
-        var contenidoPublicaciones = $("#contenidoXML");
-        // Comprobar si el div tiene hijos al cargar la página
-        if ($('#contenidoXML').children().length == 0) {
-            var divTitulo = $("<div>").html("<h2>Reseñas Publicadas</h2>");
-            contenidoPublicaciones.append(divTitulo);
-         }
-        // Obtener los valores del formulario
-        var valoracion = $("input[name='valoracion']:checked").val();
-        var nombre = $("#nombre").val();
-        var texto = $("#text").val();
+      var contenidoPublicaciones = $("#contenidoXML");
+      // Comprobar si el div tiene hijos al cargar la página
+      if ($('#contenidoXML').children().length == 0) {
+          var divTitulo = $("<div>").html("<h2>Reseñas Publicadas</h2>");
+          contenidoPublicaciones.append(divTitulo);
+       }
+      // Obtener los valores del formulario
+      var valoracion = $("input[name='valoracion']:checked").val();
+      if (valoracion !== undefined) { // Comprobar si la valoración está definida
+          valoracion += " estrellas"; // Concatenar "estrellas" al valor de la valoración
+      } else {
+          valoracion = "0 estrellas"; // Si no está definida, establecer un mensaje predeterminado
+      }
+      
+      var nombre = $("#nombre").val();
+      var texto = $("#text").val();
 
-        var divPublicacion = $("<div>").addClass("resena").html("<h3>" + nombre + "</h3><p class=\"textoResenas\">Valoración: " + valoracion + "</p><p class=\"textoResenas\">" + texto + "</p>");
-        contenidoPublicaciones.append(divPublicacion);
-        // Limpiar el formulario
-        $("#formularioReseña")[0].reset();
-        });
+      var divPublicacion = $("<div>").addClass("resena").html("<h3>" + nombre + "</h3><p class=\"textoResenas\">Valoración: " + valoracion + "</p><p class=\"textoResenas\">" + texto + "</p>");
+      contenidoPublicaciones.append(divPublicacion);
+      // Limpiar el formulario
+      $("#formularioResena")[0].reset();
+      });
         
  });
