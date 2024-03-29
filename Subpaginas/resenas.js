@@ -70,19 +70,24 @@ $("#estrella5, #estrella4, #estrella3, #estrella2, #estrella1").change(function(
         divPublicacion.hide();
         }
       $("#preview").empty().text("Imagenes subidas!");
-    // Limpiar el formulario
-    $("#formularioResena")[0].reset();
+       // Limpiar el formulario
+       $("#formularioResena")[0].reset();
+      // Desactivar todas las estrellas y restablecer el color del borde
+       $("input[type='radio']").prop('checked', false).css('border-color', '');
         }
         else if(imagenes.length >5){
             $("#preview").empty().text("Demasiadas imagenes. Solo 5.");
         }
         else{
             contenidoPublicaciones.append(divPublicacion);
-            if (contadorDivs > 3) {
+            if (contadorDivs >5) {
                 divPublicacion.hide();
             }
+            $("#preview").empty()
             // Limpiar el formulario
             $("#formularioResena")[0].reset();
+            // Desactivar todas las estrellas y restablecer el color del borde
+          $("input[type='radio']").prop('checked', false).css('border-color', '');
         }
     // Agregar botón para mostrar más reseñas si hay más de 5 reseñas
     if (contadorDivs > 5 && $(".mostrar-mas").length === 0) {
