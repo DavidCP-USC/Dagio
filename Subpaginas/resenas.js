@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  
     $("#estrella5").change(function() {
       if ($(this).is(":checked")) {
         $("input[type='radio']").prop('checked', false).css('border-color', 'yellow');
@@ -33,6 +34,7 @@ $(document).ready(function() {
           $("#estrella1").prop('checked', true).css('border-color', 'yellow'); // Activa los radio buttons estrella1 a estrella4 y cambia su color de borde a amarillo
         }
     });
+    
 
     // Función para publicar una reseña
     $("#formularioResena").submit(function(event) {
@@ -57,8 +59,33 @@ $(document).ready(function() {
 
       var divPublicacion = $("<div>").addClass("resena").html("<h3>" + nombre + "</h3><p class=\"textoResenas\">Valoración: " + valoracion + "</p><p class=\"textoResenas\">" + texto + "</p>");
       contenidoPublicaciones.append(divPublicacion);
+
+      // Obtener las imágenes previamente cargadas
+    var imagenes = [];
+    $("#preview .preview-image img").each(function() {
+        imagenes.push($(this).attr("src"));
+    });
+
+    // Publicar las imágenes junto con la reseña
+    if (imagenes.length > 0) {
+        for (var i = 0; i < imagenes.length; i++) {
+          var imagen = $("<img>").attr("src", imagenes[i]).addClass("centrar");
+          divPublicacion.append(imagen);
+        }
+
+    }
+
+      $("#preview").empty().text("Imagenes subidas!");
       // Limpiar el formulario
       $("#formularioResena")[0].reset();
       });
-        
+
+    $(".imagencita").hover(
+      function() {
+        $(this).addClass("centered");
+      },
+      function() {
+        $(this).removeClass("centered");
+      }
+    );
  });

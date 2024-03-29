@@ -74,6 +74,7 @@ label {
     font-size: 16px;
     width: 700px;
     height: 100px;
+    
 }
 
 
@@ -114,6 +115,7 @@ form{
     background-color: #A6705Dff;
     padding: 30px;
     border-radius: 20px;
+    position:relative;
     
 }
 
@@ -134,6 +136,74 @@ form div {
     padding: 30px;
 }
 
+form ol {
+    padding-left: 0;
+  }
+  
+  form li,
+  form div > p {
+    background: #A6705Dff;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    list-style-type: none;
+    border: 3px solid black;
+  }
+  
+  form img {
+    height: 64px;
+    order: 1;
+  }
+  
+  form p {
+    line-height: 32px;
+    padding-left: 10px;
+}
+
+#preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .preview-image {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+  .preview-image img, .centrar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  .remove-image {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .centrar:hover  {
+    width: 500px;
+    height: 500px;
+    position :fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+  }
+
 
 @media screen and (max-width: 580px){
     form{
@@ -152,15 +222,10 @@ form div {
         
     }
 
-    #nombre {
+    #nombre,#text, form div > p  {
         font-size: 10px;
         width: 100%;
         
-    }
-    #text{
-        
-        font-size: 10px;
-        width: 100%;
     }
 
     .textoResenas{
@@ -172,4 +237,11 @@ form div {
    
 }
 
+
+
+
+  
+  
+  
+ 
 

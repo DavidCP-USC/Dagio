@@ -59,9 +59,12 @@ div{
     }
 
     .redondeada {
+        max-width: 800px;
         height:105%;
+        
     }
 }
+
 
 @media screen and (min-height: 850px){
     footer{
@@ -70,6 +73,8 @@ div{
         width: 100%;
     }
 }
+
+
 
 @media screen and (max-height: 1100px) and (max-width: 830px){
     footer{

@@ -42,4 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
     estrella2.removeAttribute("checked");
     seleccionarEstrellas(1); // Selecciona 1 estrella si se hace clic en estrella1
   });
+
+
+
 });
