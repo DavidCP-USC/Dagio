@@ -58,16 +58,16 @@ $(document).ready(function() {
       var texto = $("#text").val();
 
       var divPublicacion = $("<div>").addClass("resena").html("<h3>" + nombre + "</h3><p class=\"textoResenas\">Valoración: " + valoracion + "</p><p class=\"textoResenas\">" + texto + "</p>");
-      contenidoPublicaciones.append(divPublicacion);
+      
 
       // Obtener las imágenes previamente cargadas
-    var imagenes = [];
-    $("#preview .preview-image img").each(function() {
-        imagenes.push($(this).attr("src"));
-    });
+      var imagenes = [];
+      $("#preview .preview-image img").each(function() {
+          imagenes.push($(this).attr("src"));
+      });
 
     // Publicar las imágenes junto con la reseña
-    if (imagenes.length > 0) {
+    if (imagenes.length > 0 && imagenes.length<=5) {
       for (var i = 0; i < imagenes.length; i++) {
 
         var imagen = $("<img>").attr("src", imagenes[i]).addClass("centrar");
@@ -85,19 +85,17 @@ $(document).ready(function() {
         
 
       }
-    }
+      contenidoPublicaciones.append(divPublicacion);
+      $("#preview").empty().text("Imagenes subidas!");
+    // Limpiar el formulario
+    $("#formularioResena")[0].reset();
+  }
+  else if(imagenes.length >5){
+    $("#preview").empty().text("Demasiadas imagenes. Solo 5.");
+  }
+  
+  
+  });
 
-    $("#preview").empty().text("Imagenes subidas!");
-      // Limpiar el formulario
-      $("#formularioResena")[0].reset();
-      });
-
-    $(".imagencita").hover(
-      function() {
-        $(this).addClass("centered");
-      },
-      function() {
-        $(this).removeClass("centered");
-      }
-    );
+    
  });
