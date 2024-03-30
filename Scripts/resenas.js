@@ -1,18 +1,18 @@
 $(document).ready(function() {
   
-  function actualizarEstrellas(estrellaSeleccionada) {
-    // Desactivar todas las estrellas y restablecer el color del borde
-    $("input[type='radio']").prop('checked', false).css('border-color', '');
-    
-    // Activar las estrellas hasta la seleccionada y cambiar su color de borde a amarillo
-    for (var i = 1; i <= estrellaSeleccionada; i++) {
-      $("#estrella" + i).prop('checked', true).css('border-color', 'yellow');
+    function actualizarEstrellas(estrellaSeleccionada) {
+        // Desactivar todas las estrellas y restablecer el color del borde
+        $("input[type='radio']").prop('checked', false).css('border-color', '');
+        
+        // Activar las estrellas hasta la seleccionada y cambiar su color de borde a amarillo
+        for (var i = 1; i <= estrellaSeleccionada; i++) {
+        $("#estrella" + i).prop('checked', true).css('border-color', 'yellow');
+        }
     }
-  }
-  $("#estrella5, #estrella4, #estrella3, #estrella2, #estrella1").change(function() {
-    var estrellaSeleccionada = parseInt($(this).val());
-    actualizarEstrellas(estrellaSeleccionada);
-});
+    $("#estrella5, #estrella4, #estrella3, #estrella2, #estrella1").change(function() {
+        var estrellaSeleccionada = parseInt($(this).val());
+        actualizarEstrellas(estrellaSeleccionada);
+    });
     
     var contadorDivs = 0;
     // Función para publicar una reseña

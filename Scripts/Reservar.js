@@ -6,14 +6,13 @@
 document.querySelector("form").addEventListener("submit", (event) => {
     event.preventDefault();
     // Obtener los campos del formulario de reservas.html
-    const fecha = document.getElementById("fecha").value; // Obtén la fecha del formulario
+    const fecha = document
     const hora = document.getElementById("hora").value; // Obtén la hora del formulario
     const telefono = document.getElementById("telefono").value; // Obtén el número de teléfono del formulario
     const personas = document.getElementById("personas").value; // Obtén el número de personas del formulario
 
     // Verificar que los campos no estén vacíos
     if (fecha.trim() === '' || hora.trim() === '' || telefono.trim() === '' || personas.trim() === '') {
-        console.log('Por favor, completa todos los campos del formulario.');
         document.getElementsByTagName("p1")[0].innerHTML = "Por favor, completa todos los campos del formulario.";
         document.getElementsByTagName("p1")[0].style.color = "red";
         return;
@@ -23,7 +22,6 @@ document.querySelector("form").addEventListener("submit", (event) => {
     const fechaActual = new Date();
     const fechaSeleccionada = new Date(fecha + 'T' + hora);
     if (fechaSeleccionada < fechaActual) {
-        console.log('La fecha y hora seleccionadas deben ser mayores o iguales a la fecha actual.');
         document.getElementsByTagName("p1")[0].innerHTML = "La fecha y hora seleccionadas deben ser mayores o iguales a la fecha actual.";
         document.getElementsByTagName("p1")[0].style.color = "red";
         return;
@@ -31,7 +29,6 @@ document.querySelector("form").addEventListener("submit", (event) => {
 
     // Verificar que el número de teléfono tenga 9 dígitos
     if (telefono.length !== 9) {
-        console.log('El número de teléfono debe tener 9 dígitos.');
         document.getElementsByTagName("p1")[0].innerHTML = "El número de teléfono debe tener 9 dígitos.";
         document.getElementsByTagName("p1")[0].style.color = "red";
         return;
@@ -39,7 +36,6 @@ document.querySelector("form").addEventListener("submit", (event) => {
 
     // Verificar que el número de personas sea mayor a 0
     if (parseInt(personas) <= 0) {
-        console.log('El número de personas debe ser mayor a 0.');
         document.getElementsByTagName("p1")[0].innerHTML = "El número de personas debe ser mayor a 0.";
         document.getElementsByTagName("p1")[0].style.color = "red";
         return;
@@ -52,11 +48,9 @@ document.querySelector("form").addEventListener("submit", (event) => {
     // Domingos: Cerrado)
     const diaSemana = fechaSeleccionada.getDay();
     const horaSeleccionada = fechaSeleccionada.getHours();
-    console.log(horaSeleccionada);
 
     // Verificar si el día seleccionado es domingo
     if (diaSemana === 0) {
-        console.log('El restaurante está cerrado los domingos.');
         document.getElementsByTagName("p1")[0].innerHTML = "El restaurante está cerrado los domingos.";
         document.getElementsByTagName("p1")[0].style.color = "red";
         return;
@@ -64,7 +58,6 @@ document.querySelector("form").addEventListener("submit", (event) => {
     // Verificar si el día seleccionado es sábado
     else if (diaSemana === 6) {
         if (!((horaSeleccionada >= 12 && horaSeleccionada < 16) || (horaSeleccionada >= 20 && horaSeleccionada < 24))) {
-            console.log('El restaurante está cerrado a esa hora.');
             document.getElementsByTagName("p1")[0].innerHTML = "El restaurante está cerrado a esa hora.";
             document.getElementsByTagName("p1")[0].style.color = "red";
             return;
@@ -74,7 +67,6 @@ document.querySelector("form").addEventListener("submit", (event) => {
     // Verificar si el día seleccionado es lunes a viernes
     else if (diaSemana >= 1 && diaSemana <= 5) {
         if (!((horaSeleccionada >= 12 && horaSeleccionada < 16) || (horaSeleccionada >= 20 && horaSeleccionada < 24))) {
-            console.log('El restaurante está cerrado los lunes a viernes por la noche.');
             document.getElementsByTagName("p1")[0].innerHTML = "El restaurante está cerrado los lunes a viernes por la noche.";
             document.getElementsByTagName("p1")[0].style.color = "red";
             return;
@@ -89,8 +81,6 @@ document.querySelector("form").addEventListener("submit", (event) => {
         // Obtener los campos del formulario de reservas.html
         const fecha = document.getElementById("fecha").value; // Obtén la fecha del formulario
         const hora = document.getElementById("hora").value; // Obtén la hora del formulario
-        console.log(fecha);
-        console.log(hora);
         // Verificar si la hora está ocupada en la misma fecha
         const horaOcupada = data.some(reserva => {
             if (reserva.Date == fecha) {
@@ -103,10 +93,8 @@ document.querySelector("form").addEventListener("submit", (event) => {
         });
 
         if (horaOcupada) {
-            console.log('La hora seleccionada está ocupada en la misma fecha.');
             document.getElementsByTagName("p1")[0].innerHTML = "La hora seleccionada está ocupada en la misma fecha.";
         } else {
-            console.log('La hora seleccionada está disponible en la misma fecha.');
             document.getElementsByTagName("p1")[0].innerHTML = "Datos enviados correctamente, en breve le contactaremos";
             document.getElementsByTagName("p1")[0].style.color = "green";
         }
