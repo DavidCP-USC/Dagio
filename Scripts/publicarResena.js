@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     var request = new XMLHttpRequest();
-    request.open("GET", "resenas.xml", true);
+    request.open("GET", "./../Datos/resenas.xml", true);
     request.onreadystatechange = function() {
         if (request.readyState === 4 && request.status === 200) {
             var xmlDoc = request.responseXML;
