@@ -1,4 +1,24 @@
+// Esta función se ejecuta cuando la página se carga
+document.addEventListener("DOMContentLoaded", () => {
+    cargarReservas();
+});
 
+// Variable para almacenar las reservas cargadas
+let reservas = [];
+
+// Función para cargar las reservas desde el archivo JSON
+const cargarReservas = () => {
+    fetch('./../Datos/Reservas.json')
+    .then(response => response.json())
+    .then(data => {
+        // Almacenar los datos cargados en la variable reservas
+        reservas = data;
+        console.log("Reservas cargadas correctamente:", reservas);
+    })
+    .catch(error => {
+        console.error('Error al leer el archivo JSON:', error);
+    });
+}
 
 // Verificamos que los campos del formulario de reservas.html no estén vacios,
 // que la fecha y la hora sea mayor o igual a la fecha actual,
@@ -66,34 +86,27 @@ document.querySelector("form").addEventListener("submit", (event) => {
     }
 
     // Verificar si la hora seleccionada está ocupada en la misma fecha
-
-   fetch('./../Datos/Reservas.json')
-    .then(response => response.json())
-    .then(data => {
-        // Obtener los campos del formulario de reservas.html
-        const fecha = document.getElementById("fecha").value; // Obtén la fecha del formulario
-        const hora = document.getElementById("hora").value; // Obtén la hora del formulario
-        // Verificar si la hora está ocupada en la misma fecha
-        const horaOcupada = data.some(reserva => {
-            if (reserva.Date == fecha) {
-                var fecha1 = new Date(reserva.Date + 'T' + reserva.Hour);
-                var fecha2 = new Date(fecha + 'T' + hora);
-                let tiempoDiferencia = fecha2.getTime() - fecha1.getTime();
-                let minutosDiferencia = Math.abs(Math.floor(tiempoDiferencia / (1000 * 60)));
-                return minutosDiferencia <= 30;
-            }
-        });
-
-        if (horaOcupada) {
-            document.getElementsByTagName("p1")[0].innerHTML = "La hora seleccionada está ocupada en la misma fecha.";
-            document.getElementsByTagName("p1")[0].style.color = "red";
-        } else {
-            document.getElementsByTagName("p1")[0].innerHTML = "Datos enviados correctamente, en breve le contactaremos";
-            document.getElementsByTagName("p1")[0].style.color = "green";
-        }
-    })
-    .catch(error => {
-        console.error('Error al leer el archivo JSON:', error);
-    });
-
+    const horaOcupada = verificarHoraOcupada(fecha, hora);
+    if (horaOcupada) {
+        document.getElementsByTagName("p1")[0].innerHTML = "La hora seleccionada está ocupada en la misma fecha.";
+        document.getElementsByTagName("p1")[0].style.color = "red";
+    } else {
+        document.getElementsByTagName("p1")[0].innerHTML = "Datos enviados correctamente, en breve le contactaremos";
+        document.getElementsByTagName("p1")[0].style.color = "green";
+    }
 });
+
+// Función para verificar si la hora está ocupada en la misma fecha
+const verificarHoraOcupada = (fecha, hora) => {
+    // Verificar si la hora está ocupada en la misma fecha
+    const horaOcupada = reservas.some(reserva => {
+        if (reserva.Date == fecha) {
+            var fecha1 = new Date(reserva.Date + 'T' + reserva.Hour);
+            var fecha2 = new Date(fecha + 'T' + hora);
+            let tiempoDiferencia = fecha2.getTime() - fecha1.getTime();
+            let minutosDiferencia = Math.abs(Math.floor(tiempoDiferencia / (1000 * 60)));
+            return minutosDiferencia <= 30;
+        }
+    });
+    return horaOcupada;
+}
