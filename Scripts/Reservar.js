@@ -67,7 +67,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
     // Verificar si el día seleccionado es lunes a viernes
     else if (diaSemana >= 1 && diaSemana <= 5) {
         if (!((horaSeleccionada >= 12 && horaSeleccionada < 16) || (horaSeleccionada >= 20 && horaSeleccionada < 24))) {
-            document.getElementsByTagName("p1")[0].innerHTML = "El restaurante está cerrado los lunes a viernes por la noche.";
+            document.getElementsByTagName("p1")[0].innerHTML = "El restaurante está cerrado a esa hora.";
             document.getElementsByTagName("p1")[0].style.color = "red";
             return;
         }
@@ -94,6 +94,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
 
         if (horaOcupada) {
             document.getElementsByTagName("p1")[0].innerHTML = "La hora seleccionada está ocupada en la misma fecha.";
+            document.getElementsByTagName("p1")[0].style.color = "red";
         } else {
             document.getElementsByTagName("p1")[0].innerHTML = "Datos enviados correctamente, en breve le contactaremos";
             document.getElementsByTagName("p1")[0].style.color = "green";
