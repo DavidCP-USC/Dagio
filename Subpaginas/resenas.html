@@ -33,39 +33,41 @@
     <div class="titulo">
       <h1>RESEÑAS</h1>
     </div>
-    <form id="formularioResena" method="post" enctype="multipart/form-data">
-      <div>
-        <label for="Valora">Valora:</label>
-        <input type="radio" id="estrella1" name="valoracion" value="1">
-        <label for="estrella1"></label>
-        <input type="radio" id="estrella2" name="valoracion" value="2">
-        <label for="estrella2"></label>
-        <input type="radio" id="estrella3" name="valoracion" value="3">
-        <label for="estrella3"></label>
-        <input type="radio" id="estrella4" name="valoracion" value="4">
-        <label for="estrella4"></label>
-        <input type="radio" id="estrella5" name="valoracion" value="5">
-        <label for="estrella5"></label>
-      </div>
-      <div>
-        <label for="Nombre">Nombre:</label>
-          <textarea id="nombre" name="nombre" required></textarea>
-      </div>
-      <div>
-        <label for="texto">Texto:</label>
-        <textarea id="text" name="texto" required></textarea>
-      </div>
-      
-      <div>
-        <label class="nivel" for="fileInput">IMAGENES</label>
-        <input class="botonImagenes" type="file" id="fileInput" accept="image/*" multiple onchange="previewImage(event)">
-        <button type="submit">PUBLICAR</button>
-      </div>  
-      <div id="preview">
-      </div>
-    </form>
+    <div class="formulario">
+      <form id="formularioResena" method="post" enctype="multipart/form-data">
+        <div>
+          <label for="Valora">Valora:</label>
+          <input type="radio" id="estrella1" name="valoracion" value="1">
+          <label for="estrella1"></label>
+          <input type="radio" id="estrella2" name="valoracion" value="2">
+          <label for="estrella2"></label>
+          <input type="radio" id="estrella3" name="valoracion" value="3">
+          <label for="estrella3"></label>
+          <input type="radio" id="estrella4" name="valoracion" value="4">
+          <label for="estrella4"></label>
+          <input type="radio" id="estrella5" name="valoracion" value="5">
+          <label for="estrella5"></label>
+        </div>
+        <div>
+          <label for="Nombre">Nombre:</label>
+            <textarea id="nombre" name="nombre" required></textarea>
+        </div>
+        <div>
+          <label for="texto">Texto:</label>
+          <textarea id="text" name="texto" required></textarea>
+        </div>
+        
+        <div>
+          <label class="nivel" for="fileInput">IMAGENES</label>
+          <input class="botonImagenes" type="file" id="fileInput" accept="image/*" multiple onchange="previewImage(event)">
+          <button id="submit" type="submit">PUBLICAR</button>
+        </div>
+        <div id="preview"></div>  
+      </form>
+    </div>
     
   </div>
+    
   <script>
     function previewImage(event) {
       var preview = document.getElementById('preview');
