@@ -6,7 +6,7 @@
 document.querySelector("form").addEventListener("submit", (event) => {
     event.preventDefault();
     // Obtener los campos del formulario de reservas.html
-    const fecha = document
+    const fecha = document.getElementById("fecha").value; // Obtén la fecha del formulario
     const hora = document.getElementById("hora").value; // Obtén la hora del formulario
     const telefono = document.getElementById("telefono").value; // Obtén el número de teléfono del formulario
     const personas = document.getElementById("personas").value; // Obtén el número de personas del formulario
