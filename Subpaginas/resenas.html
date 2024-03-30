@@ -29,79 +29,78 @@
     </nav>
 </head>
 <body>
-  <div class="body">
-    <div class="titulo">
-      <h1>RESEÑAS</h1>
+    <div class="body">
+        <div class="titulo">
+        <h1>RESEÑAS</h1>
+        </div>
+        <div class="formulario">
+            <form id="formularioResena" method="post" enctype="multipart/form-data">
+                <div>
+                    <label for="Valora">Valora:</label>
+                    <input type="radio" id="estrella1" name="valoracion" value="1">
+                    <label for="estrella1"></label>
+                    <input type="radio" id="estrella2" name="valoracion" value="2">
+                    <label for="estrella2"></label>
+                    <input type="radio" id="estrella3" name="valoracion" value="3">
+                    <label for="estrella3"></label>
+                    <input type="radio" id="estrella4" name="valoracion" value="4">
+                    <label for="estrella4"></label>
+                    <input type="radio" id="estrella5" name="valoracion" value="5">
+                    <label for="estrella5"></label>
+                </div>
+                <div>
+                    <label for="Nombre">Nombre:</label>
+                    <textarea id="nombre" name="nombre" required></textarea>
+                </div>
+                <div>
+                    <label for="texto">Texto:</label>
+                    <textarea id="text" name="texto" required></textarea>
+                </div>
+                <div>
+                    <label class="nivel" for="fileInput">IMAGENES</label>
+                    <input class="botonImagenes" type="file" id="fileInput" accept="image/*" multiple onchange="previewImage(event)">
+                    <button id="submit" type="submit">PUBLICAR</button>
+                </div>
+                <div id="preview"></div>  
+            </form>
+        </div>
+    
     </div>
-    <div class="formulario">
-      <form id="formularioResena" method="post" enctype="multipart/form-data">
-        <div>
-          <label for="Valora">Valora:</label>
-          <input type="radio" id="estrella1" name="valoracion" value="1">
-          <label for="estrella1"></label>
-          <input type="radio" id="estrella2" name="valoracion" value="2">
-          <label for="estrella2"></label>
-          <input type="radio" id="estrella3" name="valoracion" value="3">
-          <label for="estrella3"></label>
-          <input type="radio" id="estrella4" name="valoracion" value="4">
-          <label for="estrella4"></label>
-          <input type="radio" id="estrella5" name="valoracion" value="5">
-          <label for="estrella5"></label>
-        </div>
-        <div>
-          <label for="Nombre">Nombre:</label>
-            <textarea id="nombre" name="nombre" required></textarea>
-        </div>
-        <div>
-          <label for="texto">Texto:</label>
-          <textarea id="text" name="texto" required></textarea>
-        </div>
         
-        <div>
-          <label class="nivel" for="fileInput">IMAGENES</label>
-          <input class="botonImagenes" type="file" id="fileInput" accept="image/*" multiple onchange="previewImage(event)">
-          <button id="submit" type="submit">PUBLICAR</button>
-        </div>
-        <div id="preview"></div>  
-      </form>
-    </div>
-    
-  </div>
-    
-  <script>
-    function previewImage(event) {
-      var preview = document.getElementById('preview');
-      preview.innerHTML = ''; // Limpiar previsualizaciones anteriores
-      
-      var files = event.target.files;
-      for (var i = 0; i < files.length; i++) {
-        // Crear una función anónima autoinvocada para capturar la referencia correcta del FileReader
-        (function(file) {
-          var reader = new FileReader();
-          reader.onload = function() {
-            var imageContainer = document.createElement('div');
-            imageContainer.className = 'preview-image';
+    <script>
+        function previewImage(event) {
+            var preview = document.getElementById('preview');
+            preview.innerHTML = ''; // Limpiar previsualizaciones anteriores
             
-            var image = new Image();
-            image.src = reader.result;
-            imageContainer.appendChild(image);
-            
-            var removeButton = document.createElement('button');
-            removeButton.className = 'remove-image';
-            removeButton.innerHTML = '&times;';
-            removeButton.onclick = function() {
-              imageContainer.remove();
-            };
-            imageContainer.appendChild(removeButton);
-            
-            preview.appendChild(imageContainer);
-          };
-          reader.readAsDataURL(file);
-        })(files[i]);
-      }
-    }
+            var files = event.target.files;
+            for (var i = 0; i < files.length; i++) {
+                // Crear una función anónima autoinvocada para capturar la referencia correcta del FileReader
+                (function(file) {
+                var reader = new FileReader();
+                reader.onload = function() {
+                    var imageContainer = document.createElement('div');
+                    imageContainer.className = 'preview-image';
+                    
+                    var image = new Image();
+                    image.src = reader.result;
+                    imageContainer.appendChild(image);
+                    
+                    var removeButton = document.createElement('button');
+                    removeButton.className = 'remove-image';
+                    removeButton.innerHTML = '&times;';
+                    removeButton.onclick = function() {
+                    imageContainer.remove();
+                    };
+                    imageContainer.appendChild(removeButton);
+                    
+                    preview.appendChild(imageContainer);
+                };
+                reader.readAsDataURL(file);
+                })(files[i]);
+            }
+        }
     </script>
-  <div id="contenidoXML">
+    <div id="contenidoXML">
 
   </div>
 </body>
