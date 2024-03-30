@@ -55,17 +55,9 @@ document.querySelector("form").addEventListener("submit", (event) => {
         document.getElementsByTagName("p1")[0].style.color = "red";
         return;
     }
-    // Verificar si el día seleccionado es sábado
-    else if (diaSemana === 6) {
-        if (!((horaSeleccionada >= 12 && horaSeleccionada < 16) || (horaSeleccionada >= 20 && horaSeleccionada < 24))) {
-            document.getElementsByTagName("p1")[0].innerHTML = "El restaurante está cerrado a esa hora.";
-            document.getElementsByTagName("p1")[0].style.color = "red";
-            return;
-        }
-    }
-
-    // Verificar si el día seleccionado es lunes a viernes
-    else if (diaSemana >= 1 && diaSemana <= 5) {
+    
+    // Verificar si la hora seleccionada está dentro del horario de atención del restaurante
+    else if (diaSemana >= 1 && diaSemana <= 6) {
         if (!((horaSeleccionada >= 12 && horaSeleccionada < 16) || (horaSeleccionada >= 20 && horaSeleccionada < 24))) {
             document.getElementsByTagName("p1")[0].innerHTML = "El restaurante está cerrado a esa hora.";
             document.getElementsByTagName("p1")[0].style.color = "red";
